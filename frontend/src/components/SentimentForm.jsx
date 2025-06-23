@@ -40,11 +40,11 @@ export default function SentimentForm() {
         {results.map((result, i) =>
           result.result ? (
             <div key={i}>
-              <strong>{result.text}</strong>: {result.result.label} (
-              {Math.round(result.result.score * 100)}%)
+              <strong>{result.text}</strong>: {result.result[0].label} (
+              {Math.round(result.result[0].score * 100)}%)
             </div>
           ) : (
-            <div key={i}>{JSON.stringify(result)}</div> // fallback
+            <></> // fallback
           )
         )}
       </div>
